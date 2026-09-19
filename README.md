@@ -33,5 +33,3 @@
 без лишних пробелов.
 
 ![5 задание](images/lab01/img05.png)
-
-##vkjdnfjnvsf
