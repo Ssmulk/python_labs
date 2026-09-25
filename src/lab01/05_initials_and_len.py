@@ -1,6 +1,6 @@
 fio=input('ФИО: ')
 parts=fio.split()
-initials=''.join(word[0] for word in parts).upper()+'.'
+initials='.'.join(word[0] for word in parts).upper()+'.'
 clean_fio=''.join(parts)
 
 print(f'Инициалы: {initials}')
