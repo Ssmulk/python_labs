@@ -1,59 +1,56 @@
 def transpose(mat: list[list[float | int]]) -> list[list]:
-    if not mat:
+    if not mat: # Обрабатыаем пустую матрицу
         return []
-    rows = len(mat)
-    columns = len(mat[0])
-    result = []
-    for j in range(columns):
-        new_row = []
-        for i in range(rows):
-            new_row.append(mat[i][j])
-        result.append(new_row)
+    columns = len(mat[0]) 
+    for row in mat:
+        if len(row) != columns:
+            raise ValueError('рваная матрица')
+    result=[]
+    for col in range (columns):
+        newrow=[]
+        for row in range (len(mat)):
+            newrow.append(mat[row][col])
+        result.append(newrow)
     return result
+
 
 def row_sums(mat: list[list[float | int]]) -> list[float]:
-    check_matrix(mat)
-    return [sum(row) for row in mat]
+    columns=len(mat[0])
+    for row in mat:
+        if len(row) != columns:
+            raise ValueError('рваная матрица')
+    sum_row=[]
+    for row in mat:
+        sum_row.append(sum(row))
+    return sum_row
 
 def col_sums(mat: list[list[float | int]]) -> list[float]:
-    check_matrix(mat)
-    if not mat:
-        return []
-    columns = len(mat[0])
-    result = []
-    for j in range(columns):
-        total = 0
-        for i in range(len(mat)):
-            total += mat[i][j]
-        result.append(total)
-    return result
+    columns=len(mat[0])
+    for row in mat:
+        if len(row) != columns:
+            raise ValueError('рваная матрица')
+    col=zip(*mat)
+    sum_col=[]
+    for i in col:
+        sum_col.append(sum(list(i)))
+    return sum_col    
 
 
-if __name__ == "__main__":
-    print('transpose:')
-    print(transpose([[1, 2, 3]]))
-    print(transpose([[1], [2], [3]]))
-    print(transpose([[1, 2], [3, 4]]))
-    print(transpose([]))
-    try:
-        print(transpose([[1, 2], [3]]))
-    except ValueError as error:
-        print('ValueError', error)
+#print('transpose:')
+#print(transpose([[1, 2, 3]]))
+#print(transpose([[1], [2], [3]]))
+#print(transpose([[1, 2], [3, 4]]))
+#print(transpose([]))
+#print(transpose([[1, 2], [3]]))
 
-    print('row_sums:')
-    print(row_sums([[1, 2, 3], [4, 5, 6]]))
-    print(row_sums([[-1, 1], [10, -10]]))
-    print(row_sums([[0, 0], [0, 0]]))
-    try:
-        print(row_sums([[1, 2], [3]]))
-    except ValueError as error:
-        print("ValueError", error)
-
-    print('col_sums:')
-    print(col_sums([[1, 2, 3], [4, 5, 6]]))
-    print(col_sums([[-1, 1], [10, -10]]))
-    print(col_sums([[0, 0], [0, 0]]))
-    try:
-        print(col_sums([[1, 2], [3]]))
-    except ValueError as error:
-        print("ValueError", error)
+#print('row_sums:')
+#print(row_sums([[1, 2, 3], [4, 5, 6]]))
+#print(row_sums([[-1, 1], [10, -10]]))
+#print(row_sums([[0, 0], [0, 0]]))
+#print(row_sums([[1, 2], [3]]))
+    
+print('col_sums:')
+print(col_sums([[1, 2, 3], [4, 5, 6]]))
+print(col_sums([[-1, 1], [10, -10]]))
+print(col_sums([[0, 0], [0, 0]]))
+print(col_sums([[1, 2], [3]]))
