@@ -1,13 +1,4 @@
-def check_matrix(mat: list[list[float | int]]):
-    if not mat:
-        return 
-    columns = len(mat[0])
-    for row in mat:
-        if len(row) != columns:
-            raise ValueError
-
 def transpose(mat: list[list[float | int]]) -> list[list]:
-    check_matrix(mat)
     if not mat:
         return []
     rows = len(mat)
