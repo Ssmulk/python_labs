@@ -61,8 +61,9 @@ print(flatten([[1], [], [2, 3]]))
 print(flatten([[1, 2], 'ab']))
 ```
 ![A задание](../../images/lab02/img%20A.3.png)
-### transpose
+
 ## Задание B 
+### transpose
 ```python
 def transpose(mat: list[list[float | int]]) -> list[list]:
     if not mat:
