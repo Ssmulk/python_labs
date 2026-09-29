@@ -1,6 +1,7 @@
 # Лабораторная работа 2
 
 ## Задание A
+### min_max
 ```python
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     if len(nums)==0:
@@ -22,7 +23,7 @@ print(min_max([]))
 print(min_max([1.5, 2, 2.0, -3.1]))
 ```
 ![A задание](../../images/lab02/img%20A.1.png)
-
+### unique_sorted
 ```python
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
     result=[] # Пустой список для сортировки чисел
@@ -41,7 +42,7 @@ print(unique_sorted([-1, -1, 0, 2, 2]))
 print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
 ```
 ![A задание](../../images/lab02/img%20A.2.png)
-
+### flatten
 ``` python
 def flatten(mat: list[list | tuple]) -> list:
     result = [] # Список для новой матрицы
@@ -60,7 +61,7 @@ print(flatten([[1], [], [2, 3]]))
 print(flatten([[1, 2], 'ab']))
 ```
 ![A задание](../../images/lab02/img%20A.3.png)
-
+### transpose
 ## Задание B 
 ```python
 def transpose(mat: list[list[float | int]]) -> list[list]:
@@ -79,7 +80,7 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
     return result
 ```
 ![B задание](../../images/lab02/img%20B.1.png)
-
+### row_sums
 ```python
 def row_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
@@ -94,7 +95,7 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     return sum_row
 ```
 ![B задание](../../images/lab02/img%20B.2.png)
-
+### col_sums
 ```python
 def col_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
