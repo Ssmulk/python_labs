@@ -21,13 +21,13 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
     result=[] # Пустой список для сортировки чисел
     for i in nums:
         if i not in result:
-            result.append(i)
+            result.append(i) # Отсортированный список
          
-    for i in range (len(result)):
+    for i in range (len(result)): 
         for j in range (len(result)-1 -i):
             if result[j]>result[j+1]:
                 result[j], result[j+1] = result[j+1], result[j]
-    return result
+    return result # Отсортированный список чисел по возрастанию
 
 print('unique_sorted')
 print(unique_sorted([3, 1, 2, 1, 3]))
@@ -36,7 +36,7 @@ print(unique_sorted([-1, -1, 0, 2, 2]))
 print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
 
 def flatten(mat: list[list | tuple]) -> list:
-    result = [] # Список для новой матрицы
+    result = [] # Список для результата
     for i in mat:
         if type(i)==list or type(i)==tuple: # Проверка типа
             for n in i:
