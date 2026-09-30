@@ -10,24 +10,26 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
             maxx=i
     return minn, maxx
 
-print('min_max')
-print(min_max([3, -1, 5, 5, 0]))
-print(min_max([42]))
-print(min_max([-5, -2, -9]))
-print(min_max([]))
-print(min_max([1.5, 2, 2.0, -3.1]))
+#print('min_max')
+#print(min_max([3, -1, 5, 5, 0]))
+#print(min_max([42]))
+#print(min_max([-5, -2, -9]))
+#print(min_max([]))
+#print(min_max([1.5, 2, 2.0, -3.1]))
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
     result=[] # Пустой список для сортировки чисел
-    for i in  range (len(nums)):
-         if nums[i]<=nums[i]: # Проверка чисел и добавление в список
-            if nums[i] not in result:
-                result.append(nums[i])
-            else:
-                continue # Если число есть в списке
-    return sorted(result)
+    for i in nums:
+        if i not in result:
+            result.append(i)
+         
+    for i in range (len(result)):
+        for j in range (len(result)-1 -i):
+            if result[j]>result[j+1]:
+                result[j], result[j+1] = result[j+1], result[j]
+    return result
 
-print('unique_sored')
+print('unique_sorted')
 print(unique_sorted([3, 1, 2, 1, 3]))
 print(unique_sorted([]))
 print(unique_sorted([-1, -1, 0, 2, 2]))
