@@ -11,6 +11,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     gr = rec[1]
     if len(gr) == 0:
         raise ValueError('напиши группу')
+    
     if len(fio) == 3:
         fio1 = f'{name[0].upper() + name[1:]} {fio[1][0].upper()}.{fio[2][0].upper()}.'
     else:
