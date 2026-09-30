@@ -19,8 +19,8 @@ print('min_max')
 print(min_max([3, -1, 5, 5, 0]))
 print(min_max([42]))
 print(min_max([-5, -2, -9]))
-print(min_max([]))
 print(min_max([1.5, 2, 2.0, -3.1]))
+print(min_max([]))
 ```
 ![A задание](../../images/lab02/img%20A.1.png)
 ### unique_sorted
