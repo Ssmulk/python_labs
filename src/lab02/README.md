@@ -111,9 +111,10 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     sum_col=[]
     for i in col:
         sum_col.append(sum(list(i))) # Сумма столбцов
-    return sum_col    
+    return sum_col 
+ ```   
 ![B задание](../../images/lab02/img%20B.3.png)
-```
+
 
 ## Задание C
 ```python
