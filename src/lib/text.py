@@ -1,6 +1,5 @@
 import re
 
-
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     """
     Нормализует строку text.
@@ -50,7 +49,7 @@ def tokenize(text: str) -> list[str]:
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
     """
-    Считает, сколько раз каждое слово встречается в списке токенов.
+    Считает, сколько раз встречается каждое слово.
     Возвращает словарь вида {слово: количество}.
     """
     freq: dict[str, int] = {}
@@ -87,8 +86,10 @@ if __name__ == "__main__":
 
     # tokenize
     assert tokenize("привет мир") == ["привет", "мир"]
+    assert tokenize("hello,world!!!") == ["hello", "world"]
     assert tokenize("по-настоящему круто") == ["по-настоящему", "круто"]
     assert tokenize("2025 год") == ["2025", "год"]
+    assert tokenize("emoji 😀 не слово") == ["emoji", "не", "слово"]
 
     # count_freq + top_n
     freq = count_freq(["a", "b", "a", "c", "b", "a"])
