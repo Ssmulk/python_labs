@@ -134,3 +134,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 ```
+![Задание B](../../images/lab03/imgB.png)
