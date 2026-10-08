@@ -1,9 +1,13 @@
 def format_record(rec: tuple[str, str, float]) -> str:
     if type(rec) != tuple:  # Проверка на кортеж
         raise TypeError('входные данные должны быть кортежем')
+    if not isinstance(rec[2], (int, float)):
+        raise TypeError('GPA должен быть числом')
+
     gpa = round(rec[2], 2)
     if not (0.0 <= gpa <= 5.0):
         raise ValueError('GPA должен быть в диапазоне от 0.0 до 5.0')
+    
     fio = rec[0].split()
     if len(fio) == 0:
         raise ValueError('напиши имя')
@@ -19,7 +23,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     fio1 = f'{fio1.strip()}, гр. {gr.strip()}, GPA {gpa:.2f}'
     return fio1
 
-print(format_record(('Иванов Иван Иванович', 'BIVT-25', 4.6)))
+print(format_record(('Иванов Иван Иванович', 'BIVT-25', 4.60)))
 print(format_record(('Петров Пётр', 'IKBO-12', 5.0)))
 print(format_record(('Петров Пётр Петрович', 'IKBO-12', 5.0)))
 print(format_record(('сидорова анна сергеевна', 'ABB-01', 3.999)))
