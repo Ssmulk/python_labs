@@ -121,7 +121,6 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
 def format_record(rec: tuple[str, str, float]) -> str:
     if type(rec) != tuple:  # Проверка на кортеж
         raise TypeError('входные данные должны быть кортежем')
-    
     if not isinstance(rec[2], (int, float)):
         raise TypeError('GPA должен быть числом')
     gpa = round(rec[2], 2)
