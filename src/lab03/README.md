@@ -135,3 +135,19 @@ if __name__ == "__main__":
     main()
 ```
 ![Задание B](../../images/lab03/imgB.png)
+
+## Способы запуска файла `text_stats.py`
+### 1. Через `echo` 
+```python 
+echo 'Привет, мир! Привет!!!' | python -m src.lab03.text_stats
+```
+### 2. Вручную 
+```python 
+python -m src.lab03.text_stats
+```
+На пустой строке в терминале вводим текст, вставляем с помощью cmd+V
+Используем Enter чтобы перейти на новую строку (можно ввести несколько строк)
+Чтобы завершить ввод (сигнал EOF) и запустить обработку:
+
+Windows / PowerShell: Ctrl+Z, затем Enter
+Linux / macOS: Ctrl+D
