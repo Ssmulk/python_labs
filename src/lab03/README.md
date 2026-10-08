@@ -147,7 +147,7 @@ python -m src.lab03.text_stats
 ```
 - На пустой строке в терминале вводим текст, вставляем с помощью cmd+V
 - Используем Enter чтобы перейти на новую строку (можно ввести несколько строк)
-- Чтобы завершить ввод (сигнал EOF) и запустить обработку:
+Чтобы завершить ввод (сигнал EOF) и запустить обработку:
 
-- Windows / PowerShell: Ctrl+Z, затем Enter
-- Linux / macOS: Ctrl+D
+- **Windows / PowerShell: Ctrl+Z, затем Enter
+- **Linux / macOS: Ctrl+D
