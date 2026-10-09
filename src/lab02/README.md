@@ -119,6 +119,8 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
 ## Задание C
 ```python
 def format_record(rec: tuple[str, str, float]) -> str:
+    if len(rc) != 3:
+        raise ValueError
     if type(rec) != tuple:  # Проверка на кортеж
         raise TypeError('входные данные должны быть кортежем')
     if not isinstance(rec[2], (int, float)):
