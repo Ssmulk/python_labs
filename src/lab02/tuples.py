@@ -1,4 +1,6 @@
 def format_record(rec: tuple[str, str, float]) -> str:
+    if len(rec) != 3:
+        raise ValueError
     if type(rec) != tuple:  # Проверка на кортеж
         raise TypeError('входные данные должны быть кортежем')
     if not isinstance(rec[2], (int, float)):
@@ -23,7 +25,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     fio1 = f'{fio1.strip()}, гр. {gr.strip()}, GPA {gpa:.2f}'
     return fio1
 
-print(format_record(('Иванов Иван Иванович', 'BIVT-25', 4.60)))
+print(format_record(('Иванов Иван Иванович', 'BIVT-25', 4.6)))
 print(format_record(('Петров Пётр', 'IKBO-12', 5.0)))
 print(format_record(('Петров Пётр Петрович', 'IKBO-12', 5.0)))
 print(format_record(('сидорова анна сергеевна', 'ABB-01', 3.999)))
