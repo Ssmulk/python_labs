@@ -95,7 +95,8 @@ if __name__ == "__main__":
     freq = count_freq(["a", "b", "a", "c", "b", "a"])
     assert freq == {"a": 3, "b": 2, "c": 1}
     assert top_n(freq, 2) == [("a", 3), ("b", 2)]
-    # при равной частоте
+   
+    # тай-рейк по слову при равной частоте
     freq2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
     assert freq2 == {"aa": 2, "bb": 2, "cc": 1}
     assert top_n(freq2, 2) == [("aa", 2), ("bb", 2)]
