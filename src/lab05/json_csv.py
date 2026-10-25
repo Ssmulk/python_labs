@@ -120,18 +120,3 @@ if __name__ == "__main__":
     # проверка: количество записей до и после конвертации совпадает
 
     print(f"Записей в JSON: {count_json}, строк в CSV: {count_csv}")
-
-    json_to_csv("data/lab05/samples/students.json", "data/lab05/out/students_from_json.csv")
-    csv_to_json("data/lab05/samples/students.csv", "data/lab05/out/students_from_csv.json")
-
-    print("Тест #2. Конвертации JSON <-> CSV выполнены.")
-    
-    with open("data/lab05/samples/students.json", encoding="utf-8") as f:
-        count_json = len(json.load(f))
-        
-    with open("data/lab05/out/students_from_json.csv", encoding="utf-8", newline="") as f:
-        count_csv = len(list(csv.DictReader(f)))
-
-    # проверка: количество записей до и после конвертации совпадает
-
-    print(f"Записей в JSON: {count_json}, строк в CSV: {count_csv}")
