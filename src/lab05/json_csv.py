@@ -109,7 +109,7 @@ if __name__ == "__main__":
     json_to_csv("data/lab05/samples/people.json", "data/lab05/out/people_from_json.csv")
     csv_to_json("data/lab05/samples/people.csv", "data/lab05/out/people_from_csv.json")
 
-    print("Тест #1. Конвертации JSON <-> CSV выполнены.")
+    print("Тест конвертации JSON <-> CSV выполнены.")
 
     with open("data/lab05/samples/people.json", encoding="utf-8") as f:
         count_json = len(json.load(f))
