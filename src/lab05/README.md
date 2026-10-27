@@ -305,6 +305,9 @@ Carlos,30,Kazan
 Dana,21,SPB
 Andrey,27,Novosibirsk
 ```
+
+**Если у объектов разный набор ключей, недостающие значения заполняются пустыми строками.**
+
 ## Тест-кейс B: 
 **CSV → JSON**
 Входной файл:
@@ -359,3 +362,5 @@ Kazan,Russia,1306953
 Novosibirsk,Russia,1620162
 Yekaterinburg,Russia,1493749
 ```
+**Созданный файл**
+![B задание](../../images/lab05/img%20C.png)
