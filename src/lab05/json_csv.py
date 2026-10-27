@@ -108,7 +108,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 if __name__ == "__main__":
     json_to_csv("data/lab05/samples/people.json", "data/lab05/out/people_from_json.csv")
     csv_to_json("data/lab05/samples/people.csv", "data/lab05/out/people_from_csv.json")
-    csv_to_json("data/lab05/samples/cities.csv", "data/lab05/out/cities_from_csv.json")
 
     print("Тест конвертации JSON <-> CSV выполнены.")
 
