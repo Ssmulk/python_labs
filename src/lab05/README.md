@@ -266,6 +266,7 @@ if __name__ == "__main__":
 
 ## Тест-кейс А: 
 **JSON → CSV**
+
 Входной файл:
 ```python 
 [
@@ -310,6 +311,7 @@ Andrey,27,Novosibirsk
 
 ## Тест-кейс B: 
 **CSV → JSON**
+
 Входной файл:
 ```python
 name,age,city
@@ -353,6 +355,7 @@ Andrey,27,Novosibirsk
 
 ## Тест-кейс С: 
 **CSV → XLSX**
+
 Входной файл:
 ```python 
 city,country,population
