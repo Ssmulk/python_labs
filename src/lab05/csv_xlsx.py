@@ -68,9 +68,6 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 
 
 if __name__ == "__main__":
-    csv_to_xlsx(
-        "data/lab05/samples/cities.csv",
-        "data/lab05/out/cities.xlsx"
-    )
-
+    csv_to_xlsx( "data/lab05/samples/cities.csv","data/lab05/out/cities.xlsx")
+    
     print("XLSX-файлы созданы.")
