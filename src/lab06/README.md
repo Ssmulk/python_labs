@@ -100,4 +100,70 @@ python3 -m src.lab06.cli_text cat --input data/samples/people.csv
 python3 -m src.lab06.cli_text stats --input data/samples/people.txt --top 5
 ```
 **Результат**
-![A задание](../../images/lab06/img%20A%202.png)
+![A задание](../../images/lab06/img%20A%203.png)
+
+## Задание В (cli_convert.py)
+Модуль `src/lab06/cli_convert.py` предназначен для конвертации файлов разных форматов с помощью командной строки. Он включает три подкоманды: `json2csv`, `csv2json` и `csv2xlsx`. Первая позволяет преобразовать данные из JSON в CSV, вторая — перенести информацию из CSV в JSON, а третья — создать Excel-файл на основе CSV. Для выполнения каждой команды необходимо указать два параметра: `--in`, определяющий путь к исходному файлу, и `--out`, задающий место сохранения результата. Для преобразования данных используются функции `json_to_csv`, `csv_to_json` и `csv_to_xlsx`, разработанные в лабораторной работе №5. Обработка команд и переданных аргументов реализована с помощью модуля `argparse`. Запуск программы осуществляется через главную функцию `main()`.
+``` python 
+import argparse
+
+from src.lab05.json_csv import json_to_csv, csv_to_json
+from src.lab05.csv_xlsx import csv_to_xlsx
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Конвертеры данных (JSON, CSV, XLSX)")
+    sub = parser.add_subparsers(dest="cmd")
+
+    p1 = sub.add_parser("json2csv", help="Конвертировать JSON в CSV")
+    p1.add_argument("--in", dest="input", required=True, help="Входной .json файл")
+    p1.add_argument("--out", dest="output", required=True, help="Выходной .csv файл")
+
+    p2 = sub.add_parser("csv2json", help="Конвертировать CSV в JSON")
+    p2.add_argument("--in", dest="input", required=True, help="Входной .csv файл")
+    p2.add_argument("--out", dest="output", required=True, help="Выходной .json файл")
+
+    p3 = sub.add_parser("csv2xlsx", help="Конвертировать CSV в XLSX")
+    p3.add_argument("--in", dest="input", required=True, help="Входной .csv файл")
+    p3.add_argument("--out", dest="output", required=True, help="Выходной .xlsx файл")
+
+    args = parser.parse_args()
+
+    if args.cmd is None:
+        parser.error("нужно указать подкоманду: json2csv, csv2json или csv2xlsx")
+
+    try:
+        if args.cmd == "json2csv":
+            json_to_csv(args.input, args.output)
+        elif args.cmd == "csv2json":
+            csv_to_json(args.input, args.output)
+        elif args.cmd == "csv2xlsx":
+            csv_to_xlsx(args.input, args.output)
+        print(f"Готово: {args.input} -> {args.output}")
+    except FileNotFoundError as e:
+        print(f"Ошибка: файл не найден ({e})")
+    except ValueError as e:
+        print(f"Ошибка: {e}")
+
+
+if __name__ == "__main__":
+    main()
+```
+### Сценарии проверки
+
+1. json2csv — преобразование JSON в CSV
+
+Команда запуска:
+``` python 
+python3 -m src.lab06.cli_convert json2csv --in data/samples/people.json --out data/out/people_from_json.csv
+```
+2. csv2json — преобразование CSV в JSON
+
+Команда запуска:
+``` python 
+python3 -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out data/out/people_from_csv.json
+```
+3. csv2xlsx — преобразование CSV в XLSX
+
+Команда запуска:
+python3 -m src.lab06.cli_convert csv2xlsx --in data/samples/cities.csv --out data/out/cities.xlsx
