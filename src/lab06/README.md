@@ -151,19 +151,19 @@ if __name__ == "__main__":
 ```
 ### Сценарии проверки
 
-1. json2csv — преобразование JSON в CSV
+1. **json2csv — преобразование JSON в CSV**
 
 Команда запуска:
 ``` python 
 python3 -m src.lab06.cli_convert json2csv --in data/samples/people.json --out data/out/people_from_json.csv
 ```
-2. csv2json — преобразование CSV в JSON
+2. **csv2json — преобразование CSV в JSON**
 
 Команда запуска:
 ``` python 
 python3 -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out data/out/people_from_csv.json
 ```
-3. csv2xlsx — преобразование CSV в XLSX
+3. **csv2xlsx — преобразование CSV в XLSX**
 
 Команда запуска:
 python3 -m src.lab06.cli_convert csv2xlsx --in data/samples/cities.csv --out data/out/cities.xlsx
