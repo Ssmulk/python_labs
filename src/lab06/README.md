@@ -171,7 +171,7 @@ python3 -m src.lab06.cli_convert csv2xlsx --in data/samples/cities.csv --out dat
 ```
 
 ## Проверка справки --help
-Для росмотра доступных подкоманд используются команды: 
+Для просмотра доступных подкоманд используются команды: 
 ``` python 
 python3 -m src.lab06.cli_text --help
 python3 -m src.lab06.cli_convert --help
