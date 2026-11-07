@@ -166,7 +166,9 @@ python3 -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out dat
 3. **csv2xlsx — преобразование CSV в XLSX**
 
 Команда запуска:
+``` python 
 python3 -m src.lab06.cli_convert csv2xlsx --in data/samples/cities.csv --out data/out/cities.xlsx
+```
 
 ## Проверка справки --help
 Для росмотра доступных подкоманд используются команды: 
