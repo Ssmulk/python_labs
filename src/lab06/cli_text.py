@@ -5,9 +5,9 @@ from src.lib.text import normalize, tokenize, count_freq, top_n
 from src.lab04.io_txt_csv import read_text
 
 
-def check_file(path: str) -> str:
+def check_file(path: str) -> None:
     """Проверяет, что входной файл существует."""
-    if not read_text(path):
+    if not Path(path).is_file():
         raise FileNotFoundError(f"Файл не найден: {path}")
 
 
