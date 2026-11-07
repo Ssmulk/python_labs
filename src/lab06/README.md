@@ -167,3 +167,32 @@ python3 -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out dat
 
 Команда запуска:
 python3 -m src.lab06.cli_convert csv2xlsx --in data/samples/cities.csv --out data/out/cities.xlsx
+
+## Проверка справки --help
+Для росмотра доступных подкоманд используются команды: 
+``` python 
+python3 -m src.lab06.cli_text --help
+python3 -m src.lab06.cli_convert --help
+```
+![--help](../../images/lab06/img%20--help.png)
+
+Можно получить справку по каждой подкоманде: 
+``` python 
+python3 -m src.lab06.cli_text cat --help
+python3 -m src.lab06.cli_text stats --help
+python3 -m src.lab06.cli_convert json2csv --help
+python3 -m src.lab06.cli_convert csv2json --help
+python3 -m src.lab06.cli_convert csv2xlsx --help
+```
+## Проверка ошибок 
+Если отсутствует один из обязательных аргументов (`--input`, `--in` или `--out`), модуль argparse автоматически сообщает об ошибке и показывает, какие параметры необходимо добавить.
+``` python 
+python3 -m src.lab06.cli_convert json2csv
+```
+![error 1](../../images/lab06/img%20error%201%20.png)
+
+Для подкоманды stats реализована отдельная проверка параметра `--top`. Его значение должно быть положительным целым числом. Если указать ноль или отрицательное число, программа завершит выполнение команды и выведет соответствующее сообщение об ошибке.
+``` python 
+python3 -m src.lab06.cli_text stats --input data/samples/text.txt --top -2
+```
+![error 2](../../images/lab06/img%20error%202.png)
