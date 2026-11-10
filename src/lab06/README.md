@@ -93,11 +93,11 @@ python3 -m src.lab06.cli_text cat --input data/samples/people.csv
 
 2. **stats — подсчёт частоты слов**
 
-Для проверки используется файл `data/samples/people.txt`.
+Для проверки используется файл `data/samples/text.txt`.
 
 Команда для вывода пяти самых частых слов:
 ``` python
-python3 -m src.lab06.cli_text stats --input data/samples/people.txt --top 5
+python3 -m src.lab06.cli_text stats --input data/samples/text.txt --top 5
 ```
 **Результат**
 ![A задание](../../images/lab06/img%20A%203.png)
