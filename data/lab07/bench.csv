@@ -15,7 +15,7 @@ search,100000,linear,13.221946
 search,100000,binary,0.017160
 search,100000,sorted_for_binary,0.013022
 search,100000,binary+sort,0.030182
-two_sum,1000,brute,0.020231
+two_sum,1000,brute,0.0a20231
 two_sum,1000,fast,0.000108
 two_sum,10000,brute,2.040298
 two_sum,10000,fast,0.000997
